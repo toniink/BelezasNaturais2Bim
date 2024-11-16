@@ -1,0 +1,205 @@
+/* eu to comentando tudo ta nao julgue */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* deixa todo o conteúdo do header ate o footer como flex p poder deixar 
+bonitinho na vertical, e o min height é p ter certeza q ta até pelo menos 100% da altura da janela ocupada */
+.container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+
+
+/* removendo os efeitos dos links e deixando todos com cor de fonte branca além do gradiente no header,
+é aqui que vc mexe na fonte da navbar tb*/
+.navbar ul {
+    font-size: 16px;
+    background-image: linear-gradient(to right, #44010d,#8f0b13);
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    font-weight: 600;
+    
+}
+
+
+/* tirando os ballpoints das listas */
+ul{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+
+/* tamanho da logo e jogando a logo pra esquerda, antes dos elementos da navbar */
+.logo {
+    max-width: 80px;
+    float: left;
+    margin: 30px 60px;
+    cursor: pointer;
+}
+
+
+/* especificamente os elementos da navbar: home, belezas, pontos, curiosidades */
+.navbar a{
+    color:white;
+    text-decoration: none;
+    padding: 50px;
+
+    /* display: block;
+    text-align: center; */
+
+}
+
+
+/* jogando todos os elementos da navbar pra esquerda */
+.navbar li{
+    float: left;
+    margin-top: 50px;
+}
+
+
+/* quando passa o mouse por cima muda a cor, p indicar que é clicavel */
+.navbar a:hover{
+    color: #ffcab4;
+    transition: all 0.3s ease;
+}
+
+
+
+
+/* toda a cor de fundo das paginas, sem cagar o header e footer */
+body{
+    height: 100%;
+    margin: 0;
+    background-color: #FFF5EC;
+    line-height: 1.5;
+    text-align: justify;
+}
+ 
+
+/* flex 1 permite o conteudo ocupar todo o espaço disponivel que sobrou entre o header e o footer */
+.content{
+    flex: 1;
+    padding: 20px;
+}
+
+
+
+
+
+
+/* mespaço interno do footer inteiro */
+.footer{
+    padding-top: 70px;
+}
+
+
+/* configurações do footer */
+.footerContainer {
+    background-image: linear-gradient(189deg,#8f0b13, #2a0109);
+    color: white;
+    padding: 70px 0px;
+    margin: auto;
+    /* max-width: 1170px; */
+}
+
+
+/* altera a cor da fonte do footer e a de baixo dele 
+muda a cor quando ta em hover */
+.footerContainer a{
+    color: white;
+    transition: all 0.3s ease;
+}
+.footerColuna a:hover{
+    color: #ffcab4;
+}
+
+
+/* organiza a disposição em forma de linha/raia como se fosse numa tabela */
+.footerRaia{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+
+/* organiza a disposição em forma de coluna como se fosse numa tabela */
+.footerColuna{
+    width: 350px;
+    padding: 0 30px;
+    margin: 0 auto;
+    /* background-color: aqua; */
+}
+
+
+/* deixa um espacinho maneiro em baixo dos h3 que sao os titulos de cada coluna
+o position relative pelo q vi faz o elemento seguir o fluxo do documento, como o h3 ta em cima e o resto embaixo, ele segue isso, eu acho... */
+.footerColuna h3{
+    font-size: 18px;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+
+/* aqui é onde cria a linha vermelha em baixo dos h3, ele cria um pseudo elemento vazio e aparentemente é bem comum p qualquer decoraçao ou frufru
+tipo um divisor sem ter q por no html, ent é puro css*/
+.footerColuna h3::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #f6323c;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+
+/* aq ta adicionando uma margem em baixo de cada item da lista,
+not last child significa que todos c exceção do ultimo, nao vai ter essa margem, aí nao quebra a margem que ja existe em baixo sacas */
+.footerColuna ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+
+
+/* o block significa que ele ocupa todo o espaço restante da lista
+facilita de clicar
+e o transition aplica uma transição suave pra qualquer efeito q tenha na tag */
+.footerColuna ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+/* desloca o elemento pra direita adicionando margem interna na esquerda 
+quando passa o mouse por cima, e ela é suave por causa do de cima q suaviza
+quando n tem a suavidade é bruto demais mo paia */
+.footerColuna ul li a:hover{
+    color: #ffcab4;
+    padding-left: 10px;
+}
+
+
+/* a barra branca c nossos nomes centralizada */
+.footerBottom{
+    text-align: center;
+    border-top: 1px solid black;
+    border-bottom: 2px solid black;
+}
+
+/* e deixando em bold */
+.feitoPor{
+    font-weight: bold;
+}
