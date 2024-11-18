@@ -11,7 +11,8 @@
 /* sumario do css
 A- inicio da navbar
 B- inicio do conteudo das páginas
-C- configurações da home */
+C- configurações da home
+D- inicio das configurações de pagina de conteudo: paisagens,curiosidades etc */
 
 
 /* A- inicio da navbar */
@@ -95,6 +96,7 @@ ul{
 body{
     height: 100%;
     margin: 0px;
+    padding: 0px;
     background-color: #FFF5EC;
     line-height: 1.5;
     text-align: justify;
@@ -106,12 +108,14 @@ o content é o container principal de conteudo*/
 .content{
     flex: 1;
     padding: 20px;
+    margin: 0 auto;
 }
 
 
 /* todos os h1 padronizados */
 h1{
     font-size: 48px;
+    margin-top: 50px;
     margin-bottom: 25px;
 }
 /* todos os h2 padronizados */
@@ -119,8 +123,9 @@ h2{
     font-size: 24px;
 }
 
-
-
+p{
+    margin-bottom: 1em;
+}
 
 
 
@@ -129,29 +134,34 @@ h2{
 
 /* C- configurações da home, nao esperava que fosse da tanto trabalho mas espero q nao mexamos nisso novamente */
 
+/* isso aq ta uma bagunça pois estou testando como funciona o alinhamento, o primeiro é o original
+e o de baixo é o novo que fiz na tentativa e erro */
 
 /* centraliza o texto da home, eu nao sei como so sei que ta centralizado
 e se mexer quebra */
-.textoHome{
+
+
+/* inicio do bloco original */
+/* .textoHome{
      flex: 1;
      padding: 20px;
      margin: 150px auto;
      width: 70%;
-}
+} */
 
 /* deixa o texto alinhado ao lado do texto e ja formatadinho */
-.imagemHome{
+/* .imagemHome{
    border-radius: 20px;
    box-shadow: 5px 10px 8px gray;
    float: right;
    margin-left: 50px;
    margin-top: 134px;
-}
+} */
 
 
 /* toda a configuração daquele primeiro paragrafo com mais texto q tem na home
 eu nao sei fazer ele todo flex bonito ent ficou tudo na mao tb */
-.paragrafoHome{
+/* .paragrafoHome{
     font-size: 20px;
     text-align: justify;
     background-color: #efdfc5;
@@ -161,10 +171,53 @@ eu nao sei fazer ele todo flex bonito ent ficou tudo na mao tb */
     padding: 50px;
     max-width: 600px;
     box-shadow: 0px 10px 20px gray;
+} */
+/* fim do bloco original */
+
+
+/* <<bloco novo>> */
+
+/* tamanho do h1 da home */
+
+/* alinha o h2 da home com o paragrafo */
+.h2Home{
+    display: inline-block;
+    max-width: 600px;
 }
+/* configurações da imagem da home */
+.imagemHome{
+    margin-left: 30px;
+    border-radius: 20px;
+    box-shadow: 5px 10px 8px gray;
+}
+/* container com o h1,h2, p e img da home que  */
+.imageContainer{
+    width: fit-content;
+    margin: 100px auto;
+    
+}
+/* alinha o paragrafo e a imagem da home lado a lado */
+.alinhamento{
+    display: flex; 
+    align-items: center;
+    width: fit-content;
+}
+/* todas as propriedades da caixinha de paragrafo da home */
+.paragrafoHome{
+    display: inline-block;
+    font-size: 20px;
+    background-color: #efdfc5;
+    box-shadow: 0px 10px 20px gray;
+    border-radius: 15px;
+    padding: 50px;
+    max-width: 600px;
+    margin-top: 30px;
+}
+/* <<fim do bloco novo>> */
 
 
-.segundoParagrafo{
+/* conf do segundo paragrado de Quer saber mais? na home */
+.segundoParagrafoHome{
     font-size: 38px;
     font-weight: bold;
     text-align: center;
@@ -172,7 +225,7 @@ eu nao sei fazer ele todo flex bonito ent ficou tudo na mao tb */
     max-width: 600px;
     margin:0 auto 0 auto;
 }
-
+/* e seu respectivo botao */
 .botaoHome{
     text-align: center;
     padding-top: 30px;
@@ -207,6 +260,54 @@ eu nao sei fazer ele todo flex bonito ent ficou tudo na mao tb */
 }
 
 
+/* D- inicio das configurações de pagina de conteudo: paisagens,curiosidades etc*/
+
+.linha{
+    display: flex;
+}
+.coluna{
+    flex:50%;
+    
+}
+.conteudoPaginas{
+    font-size: 20px;
+    background-color: #efdfc5;
+    box-shadow: 0px 5px 10px gray;
+    border-radius: 15px;
+    padding: 50px;
+   width: 840px;
+   margin-bottom: 80px;
+}
+
+.conteudoPaginas img{
+    border-radius: 20px;
+    box-shadow: 5px 10px 8px gray;
+    margin: 10px auto;
+    margin-top: 50px;
+    display: block;
+    height: auto;
+}
+.fulano{
+    display:block;
+    text-align: center;
+    font-size: 10px;
+    margin-bottom: 50px;
+}
+
+
+
+
+.menuAcessoRapido{
+    font-size: 20px;
+    background-color: #efdfc5;
+    box-shadow: 0px 5px 10px gray;
+    border-radius: 5px;
+    padding: 30px;
+    margin-left: 90px;
+    width: fit-content;
+    position: sticky;
+    top: 0;
+}
 
 
 
@@ -215,6 +316,62 @@ eu nao sei fazer ele todo flex bonito ent ficou tudo na mao tb */
 
 
 
+
+/* bloco do accordion */
+#containerAccordion{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 500px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.accordion{
+    background-color: #8f0b13;
+    border-radius: 8px;
+    padding: 20px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.accordion-header{
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    font-size: 20px;
+    cursor: pointer;
+}
+.accordion-header span{
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.accordion-body{
+    color: #efdfc5;
+    font-size: 14px;
+    opacity: 0;
+    height: 0;
+}
+.accordion-body.active{
+    height: 100%;
+    opacity: 1;
+    padding: 15px 0px;
+    overflow: hidden;
+    transition: opacity .3s;
+}
+.arrow{
+    transition: transform .2s linear;
+}
+.accordion:has(.active) .arrow{
+    transform:rotate(180deg) ;
+}
+/* fim do accordion */
 
 
 /* inicio do footer */
