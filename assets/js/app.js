@@ -59,7 +59,31 @@ const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 const prevSlider = document.getElementById('prevSlider');
 const nextSlider = document.getElementById('nextSlider');
+const thumbnailContainer = document.querySelector('.thumbnails-wrapper');
 let currentIndex = 0;
+
+// Funções de rolagem para as thumbnails
+const scrollContainer = document.querySelector('.thumbnail-container');
+const scrollLeftBtn = document.createElement('button');
+const scrollRightBtn = document.createElement('button');
+
+// Estilizando os botões de rolagem
+scrollLeftBtn.innerHTML = '&lt;';
+scrollLeftBtn.classList.add('scroll-left');
+scrollRightBtn.innerHTML = '&gt;';
+scrollRightBtn.classList.add('scroll-right');
+
+scrollContainer.parentNode.insertBefore(scrollLeftBtn, scrollContainer);
+scrollContainer.parentNode.insertBefore(scrollRightBtn, scrollContainer.nextSibling);
+
+// Funções de rolagem
+scrollLeftBtn.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: -100, behavior: 'smooth' });
+});
+
+scrollRightBtn.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: 100, behavior: 'smooth' });
+});
 
 function updateMainSlider() {
     galleryItems.forEach((item, index) => {
@@ -157,6 +181,7 @@ window.addEventListener('click', (e) => {
         lightbox.style.display = 'none';
     }
 });
+
 
 
 const slides = document.querySelector('.slides');
