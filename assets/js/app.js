@@ -189,3 +189,5 @@ window.addEventListener('click', (e) => {
         lightbox.style.display = 'none';
     }
 });
+
+
