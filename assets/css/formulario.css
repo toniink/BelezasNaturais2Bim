@@ -83,211 +83,217 @@ ul {
   color: #ffcab4;
   transition: all 0.3s ease;
 }
+
 @media (max-width: 1366px) {
   .navbar ul {
-      font-size: 15px;
-      padding: 0 10px;
+    font-size: 15px;
+    padding: 0 10px;
   }
 
   .logo {
-      width: 50px;
-      margin: 10px 15px;
+    width: 50px;
+    margin: 10px 15px;
   }
 
   .navbar a {
-      padding: 25px 20px;
+    padding: 25px 20px;
   }
 
   .navLinks {
-      height: 60px;
+    height: 60px;
   }
 }
+
 @media (max-width: 768px) {
   .navbar {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   .navbar ul {
-      flex-direction: column;
-      font-size: 14px;
-      padding: 0;
+    flex-direction: column;
+    font-size: 14px;
+    padding: 0;
   }
 
   .logo {
-      width: 80px;
-      margin: 10px 0;
+    width: 80px;
+    margin: 10px 0;
   }
 
   .navbar a {
-      padding: 15px 10px;
-      text-align: center;
+    padding: 15px 10px;
+    text-align: center;
   }
 
   .navLinks {
-      height: 80px;
+    height: 80px;
   }
 }
 
 
 body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #FFF5EC;
-    line-height: 1.5;
-    text-align: justify;
-    background-image: url(/assets/images/alpesSuicos.jpeg);
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-    position: relative; /* Adiciona posicionamento relativo ao body */
-  }
-  
-  body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: inherit; /* Usa a mesma imagem de fundo */
-    background-size: inherit;
-    background-position: inherit;
-    background-attachment: inherit;
-    filter: brightness(30%);
-    z-index: -1; /* Coloca a pseudo-elemento atrás do conteúdo */
-    opacity: 0.5; /* Ajusta a opacidade para um efeito mais leve */
-  }
-  
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #FFF5EC;
+  line-height: 1.5;
+  text-align: justify;
+  background-image: url(/assets/images/alpesSuicos.jpeg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  background-attachment: inherit;
+  filter: brightness(30%);
+  z-index: -1;
+  opacity: 0.5;
+}
+
 
 
 
 .content {
-    flex: 1;
-    padding: 20px;
-    margin: 0 auto;
+  flex: 1;
+  padding: 20px;
+  margin: 0 auto;
 }
 
 h1 {
-    font-size: 48px;
-    margin-top: 50px;
-    margin-bottom: 25px;
-    color: #ffffff;
+  font-size: 48px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+  color: #ffffff;
 }
 
 h2 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 p {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
+
 @media (max-width: 1366px) {
   body {
-      line-height: 1.4;
+    line-height: 1.4;
   }
 
   .content {
-      padding: 18px;
-      padding-top: 0px
+    padding: 18px;
+    padding-top: 0px
   }
 
   h1 {
-      font-size: 42px;
-      margin-top: 30px;
-      margin-bottom: 22px;
+    font-size: 42px;
+    margin-top: 30px;
+    margin-bottom: 22px;
   }
 
   h2 {
-      font-size: 22px;
+    font-size: 22px;
   }
 }
 
 form {
-    width: 80%;
-    background-color: #4c4f54;
-    display: flex;
-    flex-direction: column; /* Corrigido para garantir o layout em coluna */
-    padding: 40px;
-    border-radius: 10px;
-    color: #fbebd8;
-    min-width: 400px;
-  }
-  
-
-.alinhaForm{
-    display: flex;
-     flex-direction: column;
-     align-items: center;
+  width: 80%;
+  background-color: #4c4f54;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 10px;
+  color: #fbebd8;
+  min-width: 400px;
 }
+
+
+.alinhaForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 input {
-    width: 100%;
-    height: 30px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding: 10px;
-    outline: none;
-    box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  outline: none;
+  box-sizing: border-box;
 }
 
 textarea {
-    width: 100%;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding: 10px;
-    outline: none;
-    box-sizing: border-box;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  outline: none;
+  box-sizing: border-box;
 }
 
 form button[type="submit"] {
-    background-color: #94272e;
-    color: #fbebd8;
-    padding: 15px 10px;
-    border: none;
-    margin-top: 16px;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 5px;
-   font-size: 24px;
-   font-weight: 600;
+  background-color: #94272e;
+  color: #fbebd8;
+  padding: 15px 10px;
+  border: none;
+  margin-top: 16px;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 form button[type="submit"]:hover {
-    background-color: #96383e;
+  background-color: #96383e;
 }
 
 .span-required {
-    color: red;
-    font-size: 0.875rem;
-    margin-top: 5px;
-    
-    display: none;
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 5px;
+
+  display: none;
 }
+
 @media (max-width: 1366px) {
   form {
-      padding: 28.44px; /* 40px * 0.711 */
-      border-radius: 7.11px; /* 10px * 0.711 */
-      min-width: 284.4px; /* 400px * 0.711 */
+    padding: 28.44px;
+    border-radius: 7.11px;
+    min-width: 284.4px;
   }
 
-  input, textarea {
-      height: 21.33px; /* 30px * 0.711 */
-      margin-top: 10.665px; /* 15px * 0.711 */
-      margin-bottom: 10.665px; /* 15px * 0.711 */
-      padding: 7.11px; /* 10px * 0.711 */
+  input,
+  textarea {
+    height: 21.33px;
+    margin-top: 10.665px;
+    margin-bottom: 10.665px;
+    padding: 7.11px;
   }
 
   form button[type="submit"] {
-      padding: 10.665px 7.11px; /* 15px 10px * 0.711 */
-      margin-top: 11.376px; /* 16px * 0.711 */
-      border-radius: 3.555px; /* 5px * 0.711 */
-      font-size: 17.064px; /* 24px * 0.711 */
+    padding: 10.665px 7.11px;
+    margin-top: 11.376px;
+    border-radius: 3.555px;
+    font-size: 17.064px;
   }
 
   .span-required {
-      font-size: 0.622rem; /* 0.875rem * 0.711 */
-      margin-top: 3.555px; /* 5px * 0.711 */
+    font-size: 0.622rem;
+    margin-top: 3.555px;
   }
 }
 
@@ -295,6 +301,7 @@ form button[type="submit"]:hover {
   padding-top: 70px;
   margin-bottom: 0;
 }
+
 .footerContainer {
   background-image: linear-gradient(8deg, #8f0b13, #100104);
   color: white;
@@ -302,6 +309,7 @@ form button[type="submit"]:hover {
   margin: auto;
 
 }
+
 .footerContainer a {
   color: white;
   transition: all 0.3s ease;
@@ -370,13 +378,15 @@ form button[type="submit"]:hover {
 .feitoPor {
   font-weight: bold;
 }
+
 @media (max-width: 1366px) {
   .footer {
-      padding-top: 49.77px; /* 70px * 0.711 */
-      margin-bottom: 0;
+    padding-top: 49.77px;
+    margin-bottom: 0;
   }
-  .footerContainer{
-      padding-top: 30px;
-      padding-bottom: 20px;
+
+  .footerContainer {
+    padding-top: 30px;
+    padding-bottom: 20px;
   }
 }

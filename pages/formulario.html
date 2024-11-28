@@ -39,16 +39,25 @@
                             <label for="name">Nome:</label>
                             <input type="text" id="name" name="name" placeholder="Digite seu nome" required
                                 class="inputs required" oninput="nameValidate()">
-                            <span class="span-required" id="name-error">O nome deve conter no mínimo 3
+                            
+                                <span class="span-required" id="name-error">O nome deve conter no mínimo 3
                                 caracteres!</span>
+
+
                             <label for="email">Email:</label>
                             <input type="email" id="email" name="email" placeholder="exemplo@provedor.com" required
                                 class="inputs required" oninput="emailValidate()">
+
                             <span class="span-required" id="email-error">Digite um email válido!</span>
+                            
+                            
                             <label for="mensagem">Mensagem:</label>
                             <textarea placeholder="Escreva o seu feedback" rows="5" name="mensagem" id="mensagem"
                                 required></textarea>
+                            
                             <span class="span-required" id="mensagem-error"></span>
+                            
+                           
                             <button type="submit">Enviar</button>
                         </form>
                     </div>

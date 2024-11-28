@@ -8,6 +8,7 @@ accordions.forEach(accordion => {
 })
 
 
+
 let lastScrollTop = 0;
 const navbar = document.getElementById('navbar');
 const navbarPlaceholder = document.getElementById('navbar-placeholder');
@@ -15,38 +16,39 @@ const navbarPlaceholder = document.getElementById('navbar-placeholder');
 navbarPlaceholder.style.height = `${navbar.offsetHeight}px`;
 
 window.addEventListener('scroll', () => {
-  let scrollTop = window.scrollY || document.documentElement.scrollTop;
-  if (scrollTop > lastScrollTop) {
-    navbar.style.top = `-${navbar.offsetHeight}px`;
-  } else {
-    navbar.style.top = '0';
-  }
-  lastScrollTop = scrollTop;
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        navbar.style.top = `-${navbar.offsetHeight}px`;
+    } else {
+        navbar.style.top = '0';
+    }
+    lastScrollTop = scrollTop;
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
 
-    const targetId = this.getAttribute('href').substring(1);
-    const targetElement = document.getElementById(targetId);
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
 
-    window.scrollTo({
-      top: targetElement.offsetTop - 120,
-      behavior: 'smooth'
+        window.scrollTo({
+            top: targetElement.offsetTop - 120,
+            behavior: 'smooth'
+        });
     });
-  });
 });
 
 document.querySelectorAll('.navbar li').forEach(item => {
-  item.classList.remove('active');
+    item.classList.remove('active');
 });
 
 document.querySelectorAll('.navbar li a').forEach(link => {
-  if (link.href === window.location.href) {
-    link.parentElement.classList.add('active');
-  }
+    if (link.href === window.location.href) {
+        link.parentElement.classList.add('active');
+    }
 });
+
 
 
 
@@ -78,11 +80,17 @@ scrollContainer.parentNode.insertBefore(scrollRightBtn, scrollContainer.nextSibl
 
 // Funções de rolagem
 scrollLeftBtn.addEventListener('click', () => {
-    scrollContainer.scrollBy({ left: -100, behavior: 'smooth' });
+    scrollContainer.scrollBy({
+        left: -100,
+        behavior: 'smooth'
+    });
 });
 
 scrollRightBtn.addEventListener('click', () => {
-    scrollContainer.scrollBy({ left: 100, behavior: 'smooth' });
+    scrollContainer.scrollBy({
+        left: 100,
+        behavior: 'smooth'
+    });
 });
 
 function updateMainSlider() {
@@ -181,34 +189,3 @@ window.addEventListener('click', (e) => {
         lightbox.style.display = 'none';
     }
 });
-
-
-
-const slides = document.querySelector('.slides');
-const dots = document.querySelectorAll('.dot');
-let slideIndex = 0;
-
-function showSlide(index) {
-  const offset = -index * 100; 
-  slides.style.transform = `translateX(${offset}%)`;
-
-  dots.forEach(dot => dot.classList.remove('active'));
-  dots[index].classList.add('active');
-}
-
-function nextSlide() {
-  slideIndex = (slideIndex + 1) % dots.length; 
-  showSlide(slideIndex);
-}
-
-dots.forEach((dot, index) => {
-  dot.addEventListener('click', () => {
-    slideIndex = index;
-    showSlide(slideIndex);
-  });
-});
-
-setInterval(nextSlide, 3000);
-
-showSlide(slideIndex);
-
